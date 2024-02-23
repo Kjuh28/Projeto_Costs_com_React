@@ -1,25 +1,48 @@
 {
- "projects": [],
- "categories": [
+  "projects": [
     {
-        "id":1,
-        "name":"Infra"
+      "id": "9178",
+      "name": "Rico",
+      "budget": "25000",
+      "category": {
+        "id": "5",
+        "name": "3D"
+      },
+      "cost": 0,
+      "services": []
     },
     {
-        "id":2,
-        "name":"Desenvolvimento"
-    },
-    {
-        "id":3,
-        "name":"Design"
-    },
-    {
-        "id":4,
-        "name":"Planejamento"
-    },
-    {
-        "id":5,
-        "name":"3D"
+      "id": "b713",
+      "name": "Mudar de Vida",
+      "budget": "100000",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": []
     }
-]
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Infra"
+    },
+    {
+      "id": "2",
+      "name": "Desenvolvimento"
+    },
+    {
+      "id": "3",
+      "name": "Design"
+    },
+    {
+      "id": "4",
+      "name": "Planejamento"
+    },
+    {
+      "id": "5",
+      "name": "3D"
+    }
+  ]
 }
