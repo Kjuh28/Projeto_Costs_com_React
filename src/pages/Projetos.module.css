@@ -1,11 +1,8 @@
-/* .projeto_container{
-    width: 450px;
-    margin: 0 auto;
-    padding:3em
+.project_container{
+    padding:2em;
 }
-.projeto_container h1{
-    margin-bottom: 0.5em;
+.tittle_container{
+    display: flex;
+    justify-content: space-between;   
+    margin-bottom: 2em;
 }
-.projeto_container p{
-    color:#7b7b7b;
-} */
