@@ -1,17 +1,5 @@
 {
-  "projects": [
-    {
-      "id": "fca1",
-      "name": "Rico",
-      "budget": "50000000",
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "cost": 0,
-      "services": []
-    }
-  ],
+  "projects": [],
   "categories": [
     {
       "id": "1",
