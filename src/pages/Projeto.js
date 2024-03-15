@@ -1,13 +1,20 @@
 import styles from './Projeto.module.css'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+
+import ProjectForm from '../Components/projects/ProjectForm'
+
 import Container from '../Components/layout/Container'
 import Loading from '../Components/layout/Loading'
+import Message from '../Components/layout/Message'
+
 
 
 function Projeto(){
     const [showProjectForm, setShowProjectForm] = useState(false)
     const [project, setProject] = useState([])
+    const [message, setMessage] = useState()
+    const [type, setType] = useState()
     const { id } = useParams()
     
     useEffect(() =>{
@@ -25,6 +32,33 @@ function Projeto(){
        }, 3000)
     })
 
+    function editForm(project){
+        //Budget Validation
+        if(project.budget < project.cost){
+            //message
+            setMessage('O orçamento não pode ser menor que o custo do projeto!')
+            setType('error')
+            return(false) 
+        }
+
+        fetch(`http://localhost:5000/projects/${project.id}`, {
+            method:'PATCH',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(project),
+        }).then((resp) => resp.json())
+        .then((data) =>{
+
+            setProject(data)
+            setShowProjectForm(false)
+            setMessage('Projeto alterado com sucesso!')
+            setType('success')            
+
+        })
+        .catch(err => console.log(err))
+    }  
+
     function toggleProjectForm(){
         setShowProjectForm(!showProjectForm)
     }
@@ -33,6 +67,7 @@ function Projeto(){
         {project.name ? (
              <div className={styles.project_details}>
                 <Container customClass = 'column'>
+                    {message && <Message type={type} msg={message} />}
                     <div className={styles.details_container}>
                         <h1>Projeto: {project.name}</h1>
                         <button className={styles.btn} onClick={toggleProjectForm}>
@@ -46,7 +81,11 @@ function Projeto(){
                             </div>
                         ) : (
                             <div className={styles.projectInfo}>
-                                <p>Detalhes do Projeto</p>
+                                <ProjectForm 
+                                    handleSubmit={editForm}
+                                    btnText={'Concluir Edição'}
+                                    projectData={project}
+                                />
                             </div>
                         )}
                     </div>
