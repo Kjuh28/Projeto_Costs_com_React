@@ -13,6 +13,7 @@ import Message from '../Components/layout/Message'
 
 function Projeto(){
     const [showProjectForm, setShowProjectForm] = useState(false)
+    const [showServiceForm, setShowServiceForm] = useState(false)
     const [project, setProject] = useState([])
     const [message, setMessage] = useState()
     const [type, setType] = useState()
@@ -63,6 +64,9 @@ function Projeto(){
     function toggleProjectForm(){
         setShowProjectForm(!showProjectForm)
     }
+    function toggleServiceForm(){
+        setShowServiceForm(!showServiceForm)
+    }
 
     return(<>
         {project.name ? (
@@ -90,7 +94,23 @@ function Projeto(){
                             </div>
                         )}
                     </div>
-                   
+
+                    <div className={styles.services_form_container}>
+                        <h2>Adicione um Serviço:</h2>
+                        <button className={styles.btn} onClick={toggleServiceForm}>
+                            {!showServiceForm ? 'Adicionar serviço' : 'Fechar'}
+                        </button>
+                        <div className={styles.projectInfo}>
+                            {
+                                showServiceForm && <div> Projeto vem aqui</div>
+                            }
+                        </div>                       
+                    </div>
+
+                    <h2>Serviços</h2>
+                    <Container className='start'>
+                        <p>Itens de Serviços</p>
+                    </Container>
                 </Container>
             </div>
         ) : (
