@@ -1,14 +1,15 @@
+import {parse, v4 as uuidv4} from 'uuid'
+
 import styles from './Projeto.module.css'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 import ProjectForm from '../Components/projects/ProjectForm'
+import ProjectService from '../Components/service/ProjectService'
 
 import Container from '../Components/layout/Container'
 import Loading from '../Components/layout/Loading'
 import Message from '../Components/layout/Message'
-
-//testegitpushdopc
 
 
 function Projeto(){
@@ -31,7 +32,7 @@ function Projeto(){
             setProject(data)
         })
         .catch(err => console.log(err))
-       }, 3000)
+       }, 300)
     })
 
     function editForm(project){
@@ -59,7 +60,44 @@ function Projeto(){
 
         })
         .catch(err => console.log(err))
-    }  
+    } 
+    
+    function createService(project){
+        setMessage('')
+        //last service
+        const lastService = project.services[project.services.length -1]
+
+        lastService.id = uuidv4()
+
+        const lastServiceCost = lastService.cost
+
+        const newCost = parseFloat(project.cost) + parseFloat(lastServiceCost)
+
+        // maximum value validation
+
+        if(newCost > parseFloat(project.budget)){
+            setMessage('Valor do projeto ultrapassado, verifique o custo do serviço!')
+            setType('error')
+            project.services.pop()
+            return(false)
+        }
+
+        //update project
+        project.cost = newCost
+
+        fetch(`http://localhost:5000/projects/${project.id}`, {
+            method:'PATCH',
+            headers:{
+                'Content-Type':'application/json'
+            }, body: JSON.stringify(project),
+        }).then((resp) => resp.json())
+        .then((data) =>{
+            console.log(data)
+        })
+        .catch(err => console.log(err))
+
+    }
+
 
     function toggleProjectForm(){
         setShowProjectForm(!showProjectForm)
@@ -102,7 +140,14 @@ function Projeto(){
                         </button>
                         <div className={styles.projectInfo}>
                             {
-                                showServiceForm && <div> Projeto vem aqui</div>
+                                showServiceForm && (
+                                    <ProjectService 
+                                        handleSubmit={createService}
+                                        btnText={'Adicione o Serviço'}
+                                        projectData={project}
+                                />
+                                )
+                                
                             }
                         </div>                       
                     </div>

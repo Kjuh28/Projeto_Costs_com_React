@@ -8,8 +8,69 @@
         "id": "1",
         "name": "Infra"
       },
-      "cost": 0,
-      "services": []
+      "cost": 200,
+      "services": [
+        {
+          "name": [
+            "Ficando Rico"
+          ],
+          "cost": [
+            "200"
+          ],
+          "description": [
+            "Aqui  é apenas o teste1 de serviço"
+          ],
+          "id": "5576f543-5f82-42a3-a752-d5d13e5c7a41"
+        },
+        {
+          "name": [
+            "Ficando Rico 2"
+          ],
+          "cost": [
+            "300"
+          ],
+          "description": [
+            "Aqui sou eu ficando mais rico!!!!!"
+          ],
+          "id": "10d5acde-db18-4a48-a5c6-91ee80470c19"
+        },
+        {
+          "name": [
+            "Serviços2"
+          ],
+          "cost": [
+            "100"
+          ],
+          "description": [
+            "Ativar ponto de rede"
+          ],
+          "id": "df007772-e05a-4f09-95ee-bfb24c864d88"
+        },
+        {
+          "name": [
+            "Serviços2"
+          ],
+          "cost": [
+            "100"
+          ],
+          "description": [
+            "Ativar ponto de rede"
+          ],
+          "id": "8cb81b53-d59c-4849-8907-044a45490cef"
+        },
+        {
+          "name": [
+            "Serviços"
+          ],
+          "cost": [
+            "100"
+          ],
+          "description": [
+            "Ativar ponto de rede 2"
+          ],
+          "id": "a786754f-387a-4a81-b5a5-5425fb0b0cce"
+        }
+      ]
     },
     {
       "id": "67bd",
@@ -18,6 +79,15 @@
       "category": {
         "id": "4",
         "name": "Planejamento"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "e6fc",
+      "category": {
+        "id": "1",
+        "name": "Infra"
       },
       "cost": 0,
       "services": []
