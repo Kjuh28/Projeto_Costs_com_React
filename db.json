@@ -8,7 +8,7 @@
         "id": "1",
         "name": "Infra"
       },
-      "cost": 200,
+      "cost": 17422,
       "services": [
         {
           "name": [
@@ -69,6 +69,54 @@
             "Ativar ponto de rede 2"
           ],
           "id": "a786754f-387a-4a81-b5a5-5425fb0b0cce"
+        },
+        {
+          "name": [
+            "Rico"
+          ],
+          "cost": [
+            "2222"
+          ],
+          "description": [
+            "Ativar ponto de rede"
+          ],
+          "id": "ae118318-241c-4baf-9343-d7a8df25e8d0"
+        },
+        {
+          "name": [
+            "Mais um serviço"
+          ],
+          "cost": [
+            "5000"
+          ],
+          "description": [
+            "Testando o fechamento do serviço"
+          ],
+          "id": "19e2e06d-4c56-4421-abec-9a5e9b4738cd"
+        },
+        {
+          "name": [
+            "Porta de rede"
+          ],
+          "cost": [
+            "5000"
+          ],
+          "description": [
+            "Aqui  é apenas o teste1 de serviço"
+          ],
+          "id": "f8399517-e6cf-46ee-a666-2b8e9cc069d7"
+        },
+        {
+          "name": [
+            "Porta de rede"
+          ],
+          "cost": [
+            "5000"
+          ],
+          "description": [
+            "Aqui  é apenas o teste1 de serviço"
+          ],
+          "id": "d145b262-6d14-4833-a8bf-27dfdc7a7aad"
         }
       ]
     },
